@@ -66,15 +66,17 @@ public class Main {
                     return;
                 }
             }
-            if(board.isMate()) {
-                if(board.getStarsTurn()) System.out.println("МАТ ТЕНЯМ!");
-                else System.out.println("МАТ ЗВЕЗДАМ!");
-                System.out.println("Игра окончена");
-                isGame = false;
-            }
+
 
             if(board.isCheck('*') && isGame) System.out.println("ШАХ ЗВЕЗДАМ!");
             if(board.isCheck('#') && isGame) System.out.println("ШАХ ТЕНЯМ!");
+
+            if(board.isMate()) {
+                if(board.getStarsTurn()) System.out.println("МАТ ЗВЕЗДАМ!");
+                else System.out.println("МАТ ТЕНЯМ");
+                System.out.println("Игра окончена");
+                isGame = false;
+            }
 
             board.passTurn();
         }
